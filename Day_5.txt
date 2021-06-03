@@ -1,0 +1,88 @@
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+using System;
+public struct Student
+{
+	public string Name;
+	public int RollNo;
+	public int Marks;
+}
+
+  public class Program
+  {
+	  public static void Main()
+	  {
+	  Student s1;
+	  s1.Name="Vaishnavi Raval";
+	  s1.RollNo=25;
+	  s1.Marks=90;
+	  Console.WriteLine("Name: "+s1.Name+" \nRollNo: "+s1.RollNo+" \nMarks: "+ s1.Marks);
+	  Console.ReadLine();
+	  }
+   }
+
+Output:
+Name: Vaishnavi Raval 
+RollNo: 25 
+Marks: 90
+
+-----------------------------------------------------------------------------------------------------------
+
+using System;
+public class Program
+{
+	public enum Choiceenum
+	{
+		Addition,Multiplication,Substraction,Division
+	}
+	public static void Main()
+	{
+Console.WriteLine("Enter value of Number1: ");
+int Number1=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter value of Number2: ");
+int Number2=Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter choice what operation you want to perform: ");
+		foreach(var item in Enum.GetValues(typeof(Choiceenum)))
+				{
+					Console.WriteLine(((int)item)+" "+item);
+				}
+				int Choice=Convert.ToInt32(Console.ReadLine());
+				switch(Choice)
+				{
+						case(int)Choiceenum.Addition:
+						Console.WriteLine("Addition of two number is: {0}",(Number1+Number2));
+						break;
+						case(int)Choiceenum.Multiplication:
+						Console.WriteLine("Multiplication of two number is: {0}",(Number1*Number2));
+						break;
+						case(int)Choiceenum.Substraction:
+						Console.WriteLine("Substraction of two number is: {0}",(Number1-Number2));
+						break;
+						case(int)Choiceenum.Division:
+						Console.WriteLine("Division of two number is: {0}",(Number1+Number2));
+						break;
+					default:
+						Console.WriteLine("Enter valid choice : ");
+				        break;
+				}
+		Console.ReadLine();
+     }
+}
+
+Output:
+Enter value of Number1: 
+2
+Enter value of Number2: 
+4
+Enter choice what operation you want to perform: 
+0 Addition
+1 Multiplication
+2 Substraction
+3 Division
+0
+Addition of two number is: 6
+
+--------------------------------------------------------------------------------------------------------------
